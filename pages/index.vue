@@ -21,17 +21,17 @@
     <div class="advantages-section section-padding">
       <el-row :gutter="40">
         <el-col :span="8" class="advantage-item">
-          <el-icon><box /></el-icon>
+          <el-icon><Box /></el-icon>
           <h3>质量可靠</h3>
           <p>采用优质原料，通过国际标准认证，确保每一滴胶水的卓越性能。</p>
         </el-col>
         <el-col :span="8" class="advantage-item">
-          <el-icon><opportunity /></el-icon>
+          <el-icon><Opportunity /></el-icon>
           <h3>技术创新</h3>
           <p>拥有专业的研发团队，不断探索新配方，满足多样化的应用需求。</p>
         </el-col>
         <el-col :span="8" class="advantage-item">
-          <el-icon><service /></el-icon>
+          <el-icon><Service /></el-icon>
           <h3>专业服务</h3>
           <p>提供从选型到售后的全方位技术支持，为您解决粘接难题。</p>
         </el-col>
@@ -42,14 +42,16 @@
     <div class="products-section section-padding">
       <h2 class="section-title">核心产品</h2>
       <el-row :gutter="20">
-        <el-col :span="6" v-for="product in coreProducts" :key="product.id">
-          <el-card class="product-card">
-            <img :src="product.image" class="product-image"/>
-            <div style="padding: 14px;">
-              <h4>{{ product.name }}</h4>
-              <p class="product-desc">{{ product.description }}</p>
-            </div>
-          </el-card>
+        <el-col :span="6" v-for="product in products" :key="product.id">
+          <NuxtLink :to="`/products/${product.id}`" class="product-link">
+            <el-card class="product-card">
+              <img :src="product.image" class="product-image"/>
+              <div style="padding: 14px;">
+                <h4>{{ product.name }}</h4>
+                <p class="product-desc">{{ product.description }}</p>
+              </div>
+            </el-card>
+          </NuxtLink>
         </el-col>
       </el-row>
     </div>
@@ -72,34 +74,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { Box, Opportunity, Service } from '@element-plus/icons-vue'
+import { useProducts } from '@/composables/useProducts'
 
-const coreProducts = ref([
-  {
-    id: 1,
-    name: '环氧树脂胶',
-    description: '高强度、耐化学腐蚀，适用于金属、陶瓷等多种材料。'
-,    image: 'https://images.unsplash.com/photo-1604145861548-9b8e3578b4d7?q=80&w=1974&auto=format&fit=crop'
-  },
-  {
-    id: 2,
-    name: '瞬干胶',
-    description: '快速固化，粘接力强，广泛应用于电子、医疗器械领域。',
-    image: 'https://images.unsplash.com/photo-1599493343428-ca54a4770979?q=80&w=1974&auto=format&fit=crop'
-  },
-  {
-    id: 3,
-    name: 'UV固化胶',
-    description: '紫外线照射下快速固化，透明度高，适用于光学仪器。'
-,    image: 'https://images.unsplash.com/photo-1581093450029-0b163e426a3a?q=80&w=2070&auto=format&fit=crop'
-  },
-    {
-    id: 4,
-    name: '硅酮密封胶',
-    description: '优异的耐候性和弹性，适用于建筑、汽车等密封应用。'
-,    image: 'https://images.unsplash.com/photo-1619043514489-53353924f740?q=80&w=1974&auto=format&fit=crop'
-  }
-])
+const { products } = useProducts()
 </script>
 
 <style scoped>
@@ -160,6 +138,10 @@ const coreProducts = ref([
 }
 
 /* Products Section */
+.product-link {
+  text-decoration: none;
+}
+
 .product-card {
     transition: transform 0.3s, box-shadow 0.3s;
 }

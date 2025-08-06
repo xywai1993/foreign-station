@@ -7,7 +7,7 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "deploy": "gh-pages -d .output/public"
+    "deploy": "npm run generate && gh-pages -d .output/public"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0",

@@ -24,7 +24,7 @@
               <h4>{{ product.name }}</h4>
               <p class="product-model">型号: {{ product.model }}</p>
               <p class="product-desc">{{ product.description }}</p>
-              <el-button type="primary" plain>查看详情</el-button>
+              <el-button type="primary" plain @click="$router.push(`/products/${product.id}`)">查看详情</el-button>
             </div>
           </el-card>
         </el-col>
