@@ -1,0 +1,1 @@
+import{a5 as t,T as a}from"./kN-BonUM.js";const o=r=>{const n=t(r)?r:[r],s=[];return n.forEach(e=>{var p;t(e)?s.push(...o(e)):a(e)&&((p=e.component)!=null&&p.subTree)?s.push(e,...o(e.component.subTree)):a(e)&&t(e.children)?s.push(...o(e.children)):a(e)&&e.shapeFlag===2?s.push(...o(e.type())):s.push(e)}),s};export{o as f};
