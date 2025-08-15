@@ -11,7 +11,8 @@ export default defineNuxtConfig({
 
     // for github pages
     app: {
-        baseURL: '/foreign-station/',
+        // baseURL: '/foreign-station/',
+        baseURL: '/',
         buildAssetsDir: 'assets',
     },
     nitro: {
@@ -20,6 +21,6 @@ export default defineNuxtConfig({
         },
     },
     experimental: {
-        payloadExtraction: false
+        payloadExtraction: false,
     },
 });
