@@ -1,54 +1,123 @@
-import { ref } from 'vue'
+import { ref } from 'vue';
 
 const products = ref([
-  {
-    id: 1,
-    name: '环氧树脂胶',
-    description: '高强度、耐化学腐蚀，适用于金属、陶瓷等多种材料。',
-    image: 'https://images.unsplash.com/photo-1604145861548-9b8e3578b4d7?q=80&w=1974&auto=format&fit=crop',
-    details: {
-        features: ['超高粘接强度', '优异的耐化学性', '耐高温', '适用于多种基材'],
-        applications: '广泛用于航空航天、汽车制造、电子封装和建筑结构加固。',
-        specs: '颜色：透明/淡黄色 | 固化时间：24小时 | 操作时间：30分钟 | 剪切强度：>20 MPa'
-    }
-  },
-  {
-    id: 2,
-    name: '瞬干胶',
-    description: '快速固化，粘接力强，广泛应用于电子、医疗器械领域。',
-    image: 'https://images.unsplash.com/photo-1599493343428-ca54a4770979?q=80&w=1974&auto=format&fit=crop',
-    details: {
-        features: ['秒级快速固化', '单组分，使用方便', '高强度', '适用于多孔和非多孔材料'],
-        applications: '适用于塑料、橡胶、金属的快速粘接，尤其在电子装配、医疗设备和日常维修中。',
-        specs: '主要成分：氰基丙烯酸酯 | 固化时间：5-30秒 | 全固时间：24小时 | 粘度：低/中/高'
-    }
-  },
-  {
-    id: 3,
-    name: 'UV固化胶',
-    description: '紫外线照射下快速固化，透明度高，适用于光学仪器。',
-    image: 'https://images.unsplash.com/photo-1581093450029-0b163e426a3a?q=80&w=2070&auto=format&fit=crop',
-    details: {
-        features: ['紫外光或可见光下数秒内固化', '高透明度，无黄变', '粘接强度可控', '无溶剂，环保'],
-        applications: '主要用于玻璃、水晶、光学镜头、医疗器械和电子元件的精密粘接与密封。',
-        specs: '外观：无色透明液体 | 固化能量：~1000 mJ/cm² | 硬度（邵D）：>70 | 折射率：~1.5'
-    }
-  },
-  {
-    id: 4,
-    name: '硅酮密封胶',
-    description: '优异的耐候性和弹性，适用于建筑、汽车等密封应用。',
-    image: 'https://images.unsplash.com/photo-1619043514489-53353924f740?q=80&w=1974&auto=format&fit=crop',
-    details: {
-        features: ['卓越的耐高低温性能（-60°C 至 200°C）', '抗紫外线、臭氧和雨水', '优异的弹性和位移能力', '对多数建材具有良好附着力'],
-        applications: '用于建筑幕墙、门窗密封，汽车发动机、变速箱的平面密封，以及电子元器件的防水防潮。',
-        specs: '类型：脱酸/脱醇/脱肟 | 表干时间：10-30分钟 | 固化速度：2-4mm/天 | 颜色：黑/白/灰/透明'
-    }
-  }
-])
+    // 密封胶
+    {
+        id: 1,
+        name: '耐高温硅酮密封胶',
+        category: '密封胶',
+        description: '适用于高温工况的设备法兰、管道接口密封。',
+        image: '/images/mf/mf--1.jpg',
+        details: {},
+    },
+    {
+        id: 2,
+        name: '中性透明硅酮密封胶',
+        category: '密封胶',
+        description: '无腐蚀性，适用于电子元器件、精密仪器的粘接密封。',
+        image: '/images/mf/mf--2.jpg',
+        details: {},
+    },
+    {
+        id: 3,
+        name: '快干型硅酮密封胶',
+        category: '密封胶',
+        description: '快速表干，提高生产效率，适用于流水线作业。',
+        image: '/images/mf/mf--3.jpg',
+        details: {},
+    },
+    {
+        id: 4,
+        name: '建筑用硅酮耐候密封胶',
+        category: '密封胶',
+        description: '优异的耐候性，专为建筑幕墙、门窗填缝设计。',
+        image: '/images/mf/mf--4.jpg',
+        details: {},
+    },
+
+    // AB胶
+    {
+        id: 5,
+        name: '环氧树脂AB胶',
+        category: 'AB胶',
+        description: '高强度结构粘接，适用于金属、陶瓷、复合材料。',
+        image: '/images/AB/AB--1.jpg',
+        details: {},
+    },
+    {
+        id: 6,
+        name: '丙烯酸酯AB胶',
+        category: 'AB胶',
+        description: '快速固化，韧性好，适用于塑料、金属的快速粘接。',
+        image: '/images/AB/AB--2.jpg',
+        details: {},
+    },
+    {
+        id: 7,
+        name: '透明快干AB胶',
+        category: 'AB胶',
+        description: '透明无痕，5分钟快速固化，适用于工艺品、电子元件。',
+        image: '/images/AB/AB--3.jpg',
+        details: {},
+    },
+    {
+        id: 8,
+        name: '耐高温AB胶',
+        category: 'AB胶',
+        description: '可在高达150°C的环境下长期使用，性能稳定。',
+        image: '/images/AB/AB--4.jpg',
+        details: {},
+    },
+
+    // 502胶
+    {
+        id: 9,
+        name: '通用型瞬干胶 (502)',
+        category: '502胶',
+        description: '中等粘度，用途广泛，适用于多种材质的快速粘接。',
+        image: '/images/502/502--1.jpg',
+        details: {},
+    },
+    {
+        id: 10,
+        name: '低白化瞬干胶',
+        category: '502胶',
+        description: '固化后白化程度低，适用于外观要求高的产品。',
+        image: '/images/502/502--2.jpg',
+        details: {},
+    },
+    {
+        id: 11,
+        name: '高强度瞬干胶',
+        category: '502胶',
+        description: '粘接强度高，适用于金属、硬质塑料等高要求场景。',
+        image: '/images/502/502--3.jpg',
+        details: {},
+    },
+
+    // 电工胶布
+    {
+        id: 12,
+        name: 'PVC电气绝缘胶带',
+        category: '电工胶布',
+        description: '良好的绝缘性能和阻燃性，用于电线缠绕和绝缘保护。',
+        image: '/images/jb/jb--01.jpg',
+        details: {},
+    },
+]);
+
+const detailSample = {
+    features: ['超高粘接强度', '优异的耐化学性', '耐高温', '适用于多种基材'],
+    applications: '广泛用于航空航天、汽车制造、电子封装和建筑结构加固。',
+    specs: '颜色：透明/淡黄色 | 固化时间：24小时 | 操作时间：30分钟 | 剪切强度：>20 MPa',
+};
+
+products.value.forEach((p) => {
+    p.details = detailSample;
+});
 
 export const useProducts = () => {
-  return {
-    products
-  }
-}
+    return {
+        products,
+    };
+};
