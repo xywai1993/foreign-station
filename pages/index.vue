@@ -24,7 +24,7 @@
         </div>
 
         <!-- Advantages Section -->
-        <div class="advantages-section section-padding">
+        <!-- <div class="advantages-section section-padding">
             <el-row :gutter="40">
                 <el-col :span="8" class="advantage-item">
                     <el-icon><Box /></el-icon>
@@ -42,32 +42,32 @@
                     <p>提供从选型到售后的全方位技术支持，为您解决粘接难题。</p>
                 </el-col>
             </el-row>
-        </div>
+        </div> -->
 
         <!-- Anchor Navigation -->
         <div class="anchor-nav section-padding">
             <el-row justify="center" :gutter="40">
                 <el-col :span="5">
                     <a href="#sealant-products" class="anchor-link">
-                        <img src="/images/mf/mf--1.jpg" class="anchor-icon" alt="密封胶">
+                        <img src="/images/mf/mf--1.jpg" class="anchor-icon" alt="密封胶" />
                         <span class="anchor-text">密封胶</span>
                     </a>
                 </el-col>
                 <el-col :span="5">
                     <a href="#ab-glue-products" class="anchor-link">
-                        <img src="/images/AB/AB--1.jpg" class="anchor-icon" alt="AB胶">
+                        <img src="/images/AB/AB--1.jpg" class="anchor-icon" alt="AB胶" />
                         <span class="anchor-text">AB胶</span>
                     </a>
                 </el-col>
                 <el-col :span="5">
                     <a href="#502-glue-products" class="anchor-link">
-                        <img src="/images/502/502--1.jpg" class="anchor-icon" alt="502胶">
+                        <img src="/images/502/502--1.jpg" class="anchor-icon" alt="502胶" />
                         <span class="anchor-text">502胶</span>
                     </a>
                 </el-col>
                 <el-col :span="5">
                     <a href="#tape-products" class="anchor-link">
-                        <img src="/images/jb/jb--01.jpg" class="anchor-icon" alt="电工胶布">
+                        <img src="/images/jb/jb--01.jpg" class="anchor-icon" alt="电工胶布" />
                         <span class="anchor-text">电工胶布</span>
                     </a>
                 </el-col>
@@ -81,7 +81,7 @@
                 <el-col :span="6" v-for="product in sealantProducts" :key="product.id">
                     <NuxtLink :to="`/products/${product.id}`" class="product-link">
                         <el-card class="product-card">
-                            <img :src="product.image" class="product-image" />
+                            <img :src="resolveProductImage(product.image)" class="product-image" />
                             <div style="padding: 14px">
                                 <h4>{{ product.name }}</h4>
                                 <p class="product-desc">{{ product.description }}</p>
@@ -99,7 +99,7 @@
                 <el-col :span="6" v-for="product in abGlueProducts" :key="product.id">
                     <NuxtLink :to="`/products/${product.id}`" class="product-link">
                         <el-card class="product-card">
-                            <img :src="product.image" class="product-image" />
+                            <img :src="resolveProductImage(product.image)" class="product-image" />
                             <div style="padding: 14px">
                                 <h4>{{ product.name }}</h4>
                                 <p class="product-desc">{{ product.description }}</p>
@@ -117,7 +117,7 @@
                 <el-col :span="6" v-for="product in glue502Products" :key="product.id">
                     <NuxtLink :to="`/products/${product.id}`" class="product-link">
                         <el-card class="product-card">
-                            <img :src="product.image" class="product-image" />
+                            <img :src="resolveProductImage(product.image)" class="product-image" />
                             <div style="padding: 14px">
                                 <h4>{{ product.name }}</h4>
                                 <p class="product-desc">{{ product.description }}</p>
@@ -135,7 +135,7 @@
                 <el-col :span="6" v-for="product in tapeProducts" :key="product.id">
                     <NuxtLink :to="`/products/${product.id}`" class="product-link">
                         <el-card class="product-card">
-                            <img :src="product.image" class="product-image" />
+                            <img :src="resolveProductImage(product.image)" class="product-image" />
                             <div style="padding: 14px">
                                 <h4>{{ product.name }}</h4>
                                 <p class="product-desc">{{ product.description }}</p>
@@ -173,17 +173,22 @@ import { computed } from 'vue';
 import { Box, Opportunity, Service } from '@element-plus/icons-vue';
 import { useProducts } from '@/composables/useProducts';
 
+const { baseURL } = useAppConfig();
 const { products } = useProducts();
 
-const sealantProducts = computed(() => products.value.filter(p => p.category === '密封胶').slice(0, 4));
-const abGlueProducts = computed(() => products.value.filter(p => p.category === 'AB胶').slice(0, 4));
-const glue502Products = computed(() => products.value.filter(p => p.category === '502胶').slice(0, 4));
-const tapeProducts = computed(() => products.value.filter(p => p.category === '电工胶布').slice(0, 4));
+const sealantProducts = computed(() => products.value.filter((p) => p.category === '密封胶').slice(0, 4));
+const abGlueProducts = computed(() => products.value.filter((p) => p.category === 'AB胶').slice(0, 4));
+const glue502Products = computed(() => products.value.filter((p) => p.category === '502胶').slice(0, 4));
+const tapeProducts = computed(() => products.value.filter((p) => p.category === '电工胶布').slice(0, 4));
+
+const resolveProductImage = (imagePath: string) => {
+    return process.dev ? `/${imagePath}` : `${baseURL}${imagePath}`;
+};
 </script>
 
 <style>
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 </style>
 
@@ -261,11 +266,11 @@ html {
     padding: 20px 10px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 }
 .anchor-link:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
     color: #409eff;
 }
 .anchor-icon {

@@ -3,7 +3,7 @@
     <div class="container">
       <el-row :gutter="40">
         <el-col :span="12">
-          <img :src="product.image" :alt="product.name" class="product-main-image">
+          <img :src="productImageSrc" :alt="product.name" class="product-main-image">
         </el-col>
         <el-col :span="12">
           <div class="product-info">
@@ -44,12 +44,18 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useProducts } from '@/composables/useProducts'
 
+const { baseURL } = useAppConfig();
 const route = useRoute()
 const { products } = useProducts()
 
 const product = computed(() => {
   const productId = Number(route.params.id)
   return products.value.find(p => p.id === productId)
+})
+
+const productImageSrc = computed(() => {
+    if (!product.value) return ''
+    return process.dev ? `/${product.value.image}` : `${baseURL}${product.value.image}`
 })
 </script>
 

@@ -7,7 +7,7 @@ const products = ref([
         name: '耐高温硅酮密封胶',
         category: '密封胶',
         description: '适用于高温工况的设备法兰、管道接口密封。',
-        image: '/images/mf/mf--1.jpg',
+        image: 'images/mf/mf--1.jpg',
         details: {},
     },
     {
@@ -15,7 +15,7 @@ const products = ref([
         name: '中性透明硅酮密封胶',
         category: '密封胶',
         description: '无腐蚀性，适用于电子元器件、精密仪器的粘接密封。',
-        image: '/images/mf/mf--2.jpg',
+        image: 'images/mf/mf--2.jpg',
         details: {},
     },
     {
@@ -23,7 +23,7 @@ const products = ref([
         name: '快干型硅酮密封胶',
         category: '密封胶',
         description: '快速表干，提高生产效率，适用于流水线作业。',
-        image: '/images/mf/mf--3.jpg',
+        image: 'images/mf/mf--3.jpg',
         details: {},
     },
     {
@@ -31,7 +31,7 @@ const products = ref([
         name: '建筑用硅酮耐候密封胶',
         category: '密封胶',
         description: '优异的耐候性，专为建筑幕墙、门窗填缝设计。',
-        image: '/images/mf/mf--4.jpg',
+        image: 'images/mf/mf--4.jpg',
         details: {},
     },
 
@@ -41,7 +41,7 @@ const products = ref([
         name: '环氧树脂AB胶',
         category: 'AB胶',
         description: '高强度结构粘接，适用于金属、陶瓷、复合材料。',
-        image: '/images/AB/AB--1.jpg',
+        image: 'images/AB/AB--1.jpg',
         details: {},
     },
     {
@@ -49,7 +49,7 @@ const products = ref([
         name: '丙烯酸酯AB胶',
         category: 'AB胶',
         description: '快速固化，韧性好，适用于塑料、金属的快速粘接。',
-        image: '/images/AB/AB--2.jpg',
+        image: 'images/AB/AB--2.jpg',
         details: {},
     },
     {
@@ -57,7 +57,7 @@ const products = ref([
         name: '透明快干AB胶',
         category: 'AB胶',
         description: '透明无痕，5分钟快速固化，适用于工艺品、电子元件。',
-        image: '/images/AB/AB--3.jpg',
+        image: 'images/AB/AB--3.jpg',
         details: {},
     },
     {
@@ -65,7 +65,7 @@ const products = ref([
         name: '耐高温AB胶',
         category: 'AB胶',
         description: '可在高达150°C的环境下长期使用，性能稳定。',
-        image: '/images/AB/AB--4.jpg',
+        image: 'images/AB/AB--4.jpg',
         details: {},
     },
 
@@ -75,7 +75,7 @@ const products = ref([
         name: '通用型瞬干胶 (502)',
         category: '502胶',
         description: '中等粘度，用途广泛，适用于多种材质的快速粘接。',
-        image: '/images/502/502--1.jpg',
+        image: 'images/502/502--1.jpg',
         details: {},
     },
     {
@@ -83,7 +83,7 @@ const products = ref([
         name: '低白化瞬干胶',
         category: '502胶',
         description: '固化后白化程度低，适用于外观要求高的产品。',
-        image: '/images/502/502--2.jpg',
+        image: 'images/502/502--2.jpg',
         details: {},
     },
     {
@@ -91,7 +91,7 @@ const products = ref([
         name: '高强度瞬干胶',
         category: '502胶',
         description: '粘接强度高，适用于金属、硬质塑料等高要求场景。',
-        image: '/images/502/502--3.jpg',
+        image: 'images/502/502--3.jpg',
         details: {},
     },
 
@@ -101,7 +101,7 @@ const products = ref([
         name: 'PVC电气绝缘胶带',
         category: '电工胶布',
         description: '良好的绝缘性能和阻燃性，用于电线缠绕和绝缘保护。',
-        image: '/images/jb/jb--01.jpg',
+        image: 'images/jb/jb--01.jpg',
         details: {},
     },
 ]);
