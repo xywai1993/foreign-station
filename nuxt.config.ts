@@ -8,19 +8,4 @@ export default defineNuxtConfig({
         themes: ['dark'],
     },
     css: ['element-plus/dist/index.css'],
-
-    // for github pages
-    app: {
-        // baseURL: '/foreign-station/',
-        baseURL: '/',
-        buildAssetsDir: 'assets',
-    },
-    nitro: {
-        static: {
-            nojekyll: true,
-        },
-    },
-    experimental: {
-        payloadExtraction: false,
-    },
 });
