@@ -44,7 +44,8 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { useProducts } from '@/composables/useProducts'
 
-const { baseURL } = useAppConfig();
+const runtimeConfig = useRuntimeConfig()
+const baseURL = runtimeConfig.app.baseURL
 const route = useRoute()
 const { products } = useProducts()
 

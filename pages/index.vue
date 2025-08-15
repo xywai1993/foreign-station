@@ -173,17 +173,18 @@ import { computed } from 'vue';
 import { Box, Opportunity, Service } from '@element-plus/icons-vue';
 import { useProducts } from '@/composables/useProducts';
 
-const { baseURL } = useAppConfig();
+const runtimeConfig = useRuntimeConfig();
+const baseURL = runtimeConfig.app.baseURL;
 const { products } = useProducts();
 
-const sealantProducts = computed(() => products.value.filter((p) => p.category === '密封胶').slice(0, 4));
-const abGlueProducts = computed(() => products.value.filter((p) => p.category === 'AB胶').slice(0, 4));
-const glue502Products = computed(() => products.value.filter((p) => p.category === '502胶').slice(0, 4));
-const tapeProducts = computed(() => products.value.filter((p) => p.category === '电工胶布').slice(0, 4));
+const sealantProducts = computed(() => products.value.filter(p => p.category === '密封胶').slice(0, 4));
+const abGlueProducts = computed(() => products.value.filter(p => p.category === 'AB胶').slice(0, 4));
+const glue502Products = computed(() => products.value.filter(p => p.category === '502胶').slice(0, 4));
+const tapeProducts = computed(() => products.value.filter(p => p.category === '电工胶布').slice(0, 4));
 
 const resolveProductImage = (imagePath: string) => {
-    return process.dev ? `/${imagePath}` : `${baseURL}${imagePath}`;
-};
+    return process.dev ? `/${imagePath}` : `${baseURL}${imagePath}`
+}
 </script>
 
 <style>
