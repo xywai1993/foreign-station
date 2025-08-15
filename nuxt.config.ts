@@ -19,4 +19,7 @@ export default defineNuxtConfig({
             nojekyll: true,
         },
     },
+    experimental: {
+        payloadExtraction: false
+    },
 });
