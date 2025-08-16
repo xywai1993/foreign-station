@@ -1,7 +1,13 @@
 <template>
-    <el-dropdown trigger="click" @command="changeLanguage">
+    <el-dropdown trigger="hover" @command="changeLanguage">
         <span class="el-dropdown-link">
-            <el-icon class="el-icon--right"><Setting /></el-icon>
+            <el-icon class="el-icon--right" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.2" />
+                    <path d="M2 12h20" stroke="#fff" stroke-width="1" stroke-linecap="round" opacity="0.9" />
+                    <path d="M12 2c2.5 3 2.5 9 0 13-2.5-4-2.5-10 0-13z" stroke="#fff" stroke-width="1" fill="none" opacity="0.9" />
+                </svg>
+            </el-icon>
             <span class="lang-label">{{ currentLabel }}</span>
         </span>
         <template #dropdown>
@@ -16,7 +22,6 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { Setting } from '@element-plus/icons-vue';
 const { locales, setLocale, locale } = useI18n({ useScope: 'global' });
 
 const availableLocales = locales;
