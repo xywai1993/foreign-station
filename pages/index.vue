@@ -2,146 +2,138 @@
     <div class="home">
         <!-- Hero Section -->
         <div class="hero-section">
-            <el-carousel height="500px" arrow="never">
-                <el-carousel-item>
-                    <img src="/images/banner/banner--1.jpg" class="hero-image" alt="Industrial Glue Application" />
-                </el-carousel-item>
-                <el-carousel-item>
-                    <img src="/images/banner/banner--2.jpg" class="hero-image" alt="Chemical Engineering" />
-                </el-carousel-item>
-                <el-carousel-item>
-                    <img src="/images/banner/banner--3.jpg" class="hero-image" alt="Chemical Engineering" />
-                </el-carousel-item>
-                <el-carousel-item>
-                    <img src="/images/banner/banner--4.jpg" class="hero-image" alt="Chemical Engineering" />
+            <el-carousel arrow="never">
+                <el-carousel-item v-for="i in 4" :key="i">
+                    <img :src="`/images/banner/banner--${i}.jpg`" class="hero-image" :alt="`Banner ${i}`" />
                 </el-carousel-item>
             </el-carousel>
-            <!-- <div class="hero-content">
-                <h1>高性能工业胶粘剂解决方案</h1>
-                <p>为您的制造挑战提供可靠、高效的粘接技术</p>
-                <el-button type="primary" size="large">了解更多</el-button>
-            </div> -->
         </div>
 
-        <!-- Advantages Section -->
+        <!-- Enhanced Advantages Section -->
         <div class="advantages-section section-padding">
-            <el-row :gutter="40">
-                <el-col :span="8" class="advantage-item">
-                    <el-icon><Box /></el-icon>
-                    <h3>质量可靠</h3>
-                    <p>采用优质原料，通过国际标准认证，确保每一滴胶水的卓越性能。</p>
+            <h2 class="section-title">我们的优势</h2>
+            <el-row :gutter="0" class="advantages-row">
+                <el-col :span="8" class="advantage-item-col">
+                    <div class="advantage-card" style="background-image: url('https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=2070&auto=format&fit=crop')">
+                        <div class="advantage-content">
+                            <el-icon><Box /></el-icon>
+                            <h3>质量可靠</h3>
+                            <p>采用优质原料，通过国际标准认证，确保每一滴胶水的卓越性能。</p>
+                        </div>
+                    </div>
                 </el-col>
-                <el-col :span="8" class="advantage-item">
-                    <el-icon><Opportunity /></el-icon>
-                    <h3>技术创新</h3>
-                    <p>拥有专业的研发团队，不断探索新配方，满足多样化的应用需求。</p>
+                <el-col :span="8" class="advantage-item-col">
+                     <div class="advantage-card" style="background-image: url('https://images.unsplash.com/photo-1600880292210-85938b023555?q=80&w=2070&auto=format&fit=crop')">
+                        <div class="advantage-content">
+                            <el-icon><Opportunity /></el-icon>
+                            <h3>技术创新</h3>
+                            <p>拥有专业的研发团队，不断探索新配方，满足多样化的应用需求。</p>
+                        </div>
+                    </div>
                 </el-col>
-                <el-col :span="8" class="advantage-item">
-                    <el-icon><Service /></el-icon>
-                    <h3>专业服务</h3>
-                    <p>提供从选型到售后的全方位技术支持，为您解决粘接难题。</p>
+                <el-col :span="8" class="advantage-item-col">
+                     <div class="advantage-card" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1911&auto=format&fit=crop')">
+                        <div class="advantage-content">
+                            <el-icon><Service /></el-icon>
+                            <h3>专业服务</h3>
+                            <p>提供从选型到售后的全方位技术支持，为您解决粘接难题。</p>
+                        </div>
+                    </div>
                 </el-col>
             </el-row>
         </div>
 
         <!-- Anchor Navigation -->
-        <div class="anchor-nav section-padding">
-            <el-row justify="center" :gutter="40">
-                <el-col :span="5">
-                    <a href="#sealant-products" class="anchor-link">
-                        <img src="/images/mf/mf--1.jpg" class="anchor-icon" alt="密封胶">
-                        <span class="anchor-text">密封胶</span>
-                    </a>
+        <div class="anchor-nav-section section-padding">
+            <el-row :gutter="20">
+                <el-col :span="6">
+                    <a href="#sealant-products" class="anchor-card" style="background-image: url('/images/nav/1.jpg')"></a>
                 </el-col>
-                <el-col :span="5">
-                    <a href="#ab-glue-products" class="anchor-link">
-                        <img src="/images/AB/AB--1.jpg" class="anchor-icon" alt="AB胶">
-                        <span class="anchor-text">AB胶</span>
-                    </a>
+                <el-col :span="6">
+                    <a href="#ab-glue-products" class="anchor-card" style="background-image: url('/images/nav/2.jpg')"></a>
                 </el-col>
-                <el-col :span="5">
-                    <a href="#502-glue-products" class="anchor-link">
-                        <img src="/images/502/502--1.jpg" class="anchor-icon" alt="502胶">
-                        <span class="anchor-text">502胶</span>
-                    </a>
+                <el-col :span="6">
+                    <a href="#502-glue-products" class="anchor-card" style="background-image: url('/images/nav/3.jpg')"></a>
                 </el-col>
-                <el-col :span="5">
-                    <a href="#tape-products" class="anchor-link">
-                        <img src="/images/jb/jb--01.jpg" class="anchor-icon" alt="电工胶布">
-                        <span class="anchor-text">电工胶布</span>
-                    </a>
+                <el-col :span="6">
+                    <a href="#tape-products" class="anchor-card" style="background-image: url('/images/nav/4.jpg')"></a>
                 </el-col>
             </el-row>
         </div>
 
-        <!-- Sealant Products Section -->
+        <!-- Product Sections -->
         <div id="sealant-products" class="products-section section-padding">
-            <h2 class="section-title">密封胶</h2>
-            <el-row :gutter="20">
-                <el-col :span="6" v-for="product in sealantProducts" :key="product.id">
-                    <NuxtLink :to="`/products/${product.id}`" class="product-link">
-                        <el-card class="product-card">
-                            <img :src="product.image" class="product-image" />
-                            <div style="padding: 14px">
-                                <h4>{{ product.name }}</h4>
-                                <p class="product-desc">{{ product.description }}</p>
-                            </div>
-                        </el-card>
-                    </NuxtLink>
+            <el-row :gutter="40" align="middle">
+                <el-col :span="6">
+                    <div class="category-sidebar">
+                        <h2 class="category-title">密封胶</h2>
+                        <p class="category-description">提供卓越的密封、防水和防尘性能，适用于建筑、汽车和电子等多个领域。</p>
+                        <el-button type="primary" plain @click="$router.push('/products')">查看全部</el-button>
+                    </div>
+                </el-col>
+                <el-col :span="18">
+                    <ProductRow :products="sealantProducts" />
                 </el-col>
             </el-row>
         </div>
-
-        <!-- AB Glue Products Section -->
-        <div id="ab-glue-products" class="products-section section-padding">
-            <h2 class="section-title">AB胶</h2>
-            <el-row :gutter="20">
-                <el-col :span="6" v-for="product in abGlueProducts" :key="product.id">
-                    <NuxtLink :to="`/products/${product.id}`" class="product-link">
-                        <el-card class="product-card">
-                            <img :src="product.image" class="product-image" />
-                            <div style="padding: 14px">
-                                <h4>{{ product.name }}</h4>
-                                <p class="product-desc">{{ product.description }}</p>
-                            </div>
-                        </el-card>
-                    </NuxtLink>
+        <div id="ab-glue-products" class="products-section section-padding bg-light">
+            <el-row :gutter="40" align="middle">
+                <el-col :span="6">
+                    <div class="category-sidebar">
+                        <h2 class="category-title">AB胶</h2>
+                        <p class="category-description">高强度、快速固化的结构胶粘剂，适用于金属、塑料、陶瓷等多种材料的粘接。</p>
+                        <el-button type="primary" plain @click="$router.push('/products')">查看全部</el-button>
+                    </div>
+                </el-col>
+                <el-col :span="18">
+                    <ProductRow :products="abGlueProducts" />
                 </el-col>
             </el-row>
         </div>
-
-        <!-- 502 Glue Products Section -->
         <div id="502-glue-products" class="products-section section-padding">
-            <h2 class="section-title">502胶</h2>
-            <el-row :gutter="20">
-                <el-col :span="6" v-for="product in glue502Products" :key="product.id">
-                    <NuxtLink :to="`/products/${product.id}`" class="product-link">
-                        <el-card class="product-card">
-                            <img :src="product.image" class="product-image" />
-                            <div style="padding: 14px">
-                                <h4>{{ product.name }}</h4>
-                                <p class="product-desc">{{ product.description }}</p>
-                            </div>
-                        </el-card>
-                    </NuxtLink>
+            <el-row :gutter="40" align="middle">
+                <el-col :span="6">
+                    <div class="category-sidebar">
+                        <h2 class="category-title">502胶</h2>
+                        <p class="category-description">瞬间强力粘接，广泛用于家庭维修、手工艺制作和工业生产中的快速固定。</p>
+                        <el-button type="primary" plain @click="$router.push('/products')">查看全部</el-button>
+                    </div>
+                </el-col>
+                <el-col :span="18">
+                    <ProductRow :products="glue502Products" />
+                </el-col>
+            </el-row>
+        </div>
+        <div id="tape-products" class="products-section section-padding bg-light">
+            <el-row :gutter="40" align="middle">
+                <el-col :span="6">
+                    <div class="category-sidebar">
+                        <h2 class="category-title">电工胶布</h2>
+                        <p class="category-description">优良的绝缘性能和阻燃性，为电气作业提供可靠的安全保障。</p>
+                        <el-button type="primary" plain @click="$router.push('/products')">查看全部</el-button>
+                    </div>
+                </el-col>
+                <el-col :span="18">
+                    <ProductRow :products="tapeProducts" />
                 </el-col>
             </el-row>
         </div>
 
-        <!-- Electrical Tape Products Section -->
-        <div id="tape-products" class="products-section section-padding">
-            <h2 class="section-title">电工胶布</h2>
-            <el-row :gutter="20">
-                <el-col :span="6" v-for="product in tapeProducts" :key="product.id">
-                    <NuxtLink :to="`/products/${product.id}`" class="product-link">
-                        <el-card class="product-card">
-                            <img :src="product.image" class="product-image" />
-                            <div style="padding: 14px">
-                                <h4>{{ product.name }}</h4>
-                                <p class="product-desc">{{ product.description }}</p>
-                            </div>
-                        </el-card>
-                    </NuxtLink>
+        <!-- Company Strength Section -->
+        <div class="strength-section section-padding">
+             <h2 class="section-title">实力见证</h2>
+            <el-row :gutter="40">
+                <el-col :span="8" class="strength-item">
+                    <div class="strength-number">1,200+</div>
+                    <div class="strength-label">服务客户</div>
+                </el-col>
+                <el-col :span="8" class="strength-item">
+                    <div class="strength-number">5,000T+</div>
+                    <div class="strength-label">年产量</div>
+                </el-col>
+                <el-col :span="8" class="strength-item">
+                    <div class="strength-number">300+</div>
+                    <div class="strength-label">产品种类</div>
                 </el-col>
             </el-row>
         </div>
@@ -156,7 +148,7 @@
                         alt="Factory"
                     />
                 </el-col>
-                <el-col :span="12">
+                <el-col :span="12" class="choose-us-content">
                     <h2 class="section-title">为什么选择我们？</h2>
                     <p>
                         我们不仅仅是胶水供应商，更是您可靠的合作伙伴。我们深入了解您的行业需求，提供量身定制的解决方案，帮助您提高生产效率、降低成本，并在激烈的市场竞争中脱颖而出。
@@ -185,128 +177,197 @@ const tapeProducts = computed(() => products.value.filter(p => p.category === '�
 html {
   scroll-behavior: smooth;
 }
+.bg-light {
+    background-color: #f7f8fa;
+}
 </style>
 
 <style scoped>
 .section-padding {
-    padding: 60px 80px;
+    padding: 60px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .section-title {
     text-align: center;
     font-size: 2.2em;
     margin-bottom: 40px;
+    color: #303133;
 }
 
 /* Hero Section */
 .hero-section {
     position: relative;
-    text-align: center;
-    color: white;
+    width: 100%;
+    height: 0;
+    /* Aspect Ratio: (height / width) * 100%. Using 600/1920 = 31.25% */
+    padding-bottom: 31.25%;
+    background-color: #eee; /* Fallback color */
+}
+
+.hero-section :deep(.el-carousel),
+.hero-section :deep(.el-carousel__container) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .hero-image {
     width: 100%;
-    height: 500px;
-    object-fit: cover;
-    filter: brightness(0.6);
-}
-
-.hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.hero-content h1 {
-    font-size: 3em;
-    font-weight: bold;
-}
-
-.hero-content p {
-    font-size: 1.2em;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    height: 100%;
+    object-fit: cover; /* Cover the area, will crop if aspect ratio mismatches */
+    display: block;
 }
 
 /* Advantages Section */
 .advantages-section {
-    background-color: #f7f8fa;
+    background-color: #fff;
 }
-.advantage-item .el-icon {
+.advantages-row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+.advantage-item-col {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.advantage-card {
+    height: 350px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    transition: transform 0.4s ease;
+}
+.advantage-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%);
+    transition: background 0.4s ease;
+}
+.advantage-card:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+.advantage-card:hover::before {
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 70%);
+}
+.advantage-content {
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+    transition: all 0.4s ease;
+}
+.advantage-card:hover .advantage-content {
+    transform: translateY(-10px);
+}
+.advantage-content .el-icon {
     font-size: 48px;
-    margin-bottom: 20px;
-    color: #409eff;
+    margin-bottom: 15px;
 }
-.advantage-item h3 {
-    font-size: 1.5em;
+.advantage-content h3 {
+    font-size: 1.8em;
     margin-bottom: 10px;
+    font-weight: bold;
+}
+.advantage-content p {
+    font-size: 1em;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+}
+.advantage-card:hover p {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* Anchor Nav */
-.anchor-nav {
-    background-color: #f7f8fa; /* Changed background for contrast */
-    padding-top: 40px;
-    padding-bottom: 40px;
+/* New Anchor Navigation */
+.anchor-nav-section {
+    /* The .section-padding class handles max-width and centering */
 }
-.anchor-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: #303133;
-    transition: all 0.3s;
-    padding: 20px 10px;
-    background-color: #fff;
+.anchor-card {
+    display: block;
+    height: 200px;
     border-radius: 8px;
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.1);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
 }
-.anchor-link:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
-    color: #409eff;
-}
-.anchor-icon {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border-radius: 50%;
-    border: 3px solid #eee;
-}
-.anchor-link:hover .anchor-icon {
-    border-color: #409eff;
-}
-.anchor-text {
-    font-size: 1.1em;
-    font-weight: 500;
+
+.anchor-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 /* Products Section */
-.product-link {
-    text-decoration: none;
+.products-section {
+    background-color: #fff;
+}
+.products-section.bg-light {
+    background-color: #f7f8fa;
 }
 
-.product-card {
-    transition: transform 0.3s, box-shadow 0.3s;
+.category-sidebar {
+    padding-right: 30px; /* Add some space between sidebar and products */
 }
-.product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+.category-title {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #303133;
+    margin-bottom: 20px;
+    text-align: left;
 }
-.product-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+
+.category-description {
+    font-size: 1.1em;
+    color: #606266;
+    line-height: 1.7;
+    margin-bottom: 30px;
 }
-.product-desc {
-    font-size: 0.9em;
-    color: #666;
+
+/* Strength Section */
+.strength-section {
+    background-color: #f7f8fa;
+}
+.strength-item {
+    text-align: center;
+}
+.strength-number {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: #409eff;
+}
+.strength-label {
+    font-size: 1.2em;
+    color: #606266;
+    margin-top: 10px;
 }
 
 /* Choose Us Section */
+.choose-us-section {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+.choose-us-section .section-title {
+    color: #fff;
+    text-align: left;
+}
+.choose-us-content p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
 .choose-us-image {
     width: 100%;
     border-radius: 8px;
