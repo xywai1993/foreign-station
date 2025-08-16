@@ -1,0 +1,49 @@
+{
+    "navigation": {
+        "home": "Home",
+        "products": "Products",
+        "about": "About Us",
+        "contact": "Contact Us"
+    },
+    "header": {
+        "search_placeholder": "Search for products...",
+        "call_us": "Call Us: +86 123 4567 8901"
+    },
+    "footer": {
+        "about_us": "About Us",
+        "about_us_text": "We are a leading provider of industrial adhesive solutions, dedicated to providing high-quality, high-performance adhesive products to customers worldwide.",
+        "product_series": "Product Series",
+        "contact_us": "Contact Us",
+        "contact_email": "Email: contact&#64;industrial-glue.com",
+        "contact_phone": "Phone: +86 123 4567 8901",
+        "contact_address": "Address: 123 Industrial Park, Shanghai, China",
+        "follow_us": "Follow Us",
+        "copyright": "© 2025 Industrial Glue Company. All rights reserved."
+    },
+    "home": {
+        "advantages_title": "Our Advantages",
+        "quality_title": "Reliable Quality",
+        "quality_text": "Using high-quality raw materials and certified by international standards to ensure the excellent performance of every drop of glue.",
+        "innovation_title": "Technological Innovation",
+        "innovation_text": "With a professional R&D team, we continuously explore new formulas to meet diverse application needs.",
+        "service_title": "Professional Service",
+        "service_text": "Providing comprehensive technical support from model selection to after-sales service to solve your bonding problems.",
+        "sealant_title": "Sealant",
+        "sealant_desc": "Provides excellent sealing, waterproof and dustproof performance, suitable for construction, automotive and electronic fields.",
+        "ab_glue_title": "AB Glue",
+        "ab_glue_desc": "High-strength, fast-curing structural adhesive for bonding various materials such as metal, plastic, and ceramics.",
+        "glue_502_title": "502 Glue",
+        "glue_502_desc": "Instant strong bonding, widely used for rapid fixing in household repairs, handicraft making and industrial production.",
+        "tape_title": "Electrical Tape",
+        "tape_desc": "Excellent insulation and flame retardancy, providing reliable safety protection for electrical operations.",
+        "view_all": "View All",
+        "strength_title": "Strength Witness",
+        "strength_clients": "Served Clients",
+        "strength_output": "Annual Output",
+        "strength_products": "Product Types",
+        "why_choose_us_title": "Why Choose Us?",
+        "why_choose_us_text": "We are more than just a glue supplier, we are your reliable partner. We have a deep understanding of your industry needs, provide tailor-made solutions to help you improve production efficiency, reduce costs, and stand out in the fierce market competition.",
+        "contact_us_button": "Contact Us"
+    },
+    "floating_contact": "Scan to contact via WhatsApp"
+}

@@ -11,32 +11,41 @@
 
         <!-- Enhanced Advantages Section -->
         <div class="advantages-section section-padding">
-            <h2 class="section-title">我们的优势</h2>
+            <h2 class="section-title">{{ t('home.advantages_title') }}</h2>
             <el-row :gutter="0" class="advantages-row">
                 <el-col :span="8" class="advantage-item-col">
-                    <div class="advantage-card" style="background-image: url('https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=2070&auto=format&fit=crop')">
+                    <div
+                        class="advantage-card"
+                        style="background-image: url('https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=2070&auto=format&fit=crop')"
+                    >
                         <div class="advantage-content">
                             <el-icon><Box /></el-icon>
-                            <h3>质量可靠</h3>
-                            <p>采用优质原料，通过国际标准认证，确保每一滴胶水的卓越性能。</p>
+                            <h3>{{ t('home.quality_title') }}</h3>
+                            <p>{{ t('home.quality_text') }}</p>
                         </div>
                     </div>
                 </el-col>
                 <el-col :span="8" class="advantage-item-col">
-                     <div class="advantage-card" style="background-image: url('https://images.unsplash.com/photo-1600880292210-85938b023555?q=80&w=2070&auto=format&fit=crop')">
+                    <div
+                        class="advantage-card"
+                        style="background-image: url('https://images.unsplash.com/photo-1600880292210-85938b023555?q=80&w=2070&auto=format&fit=crop')"
+                    >
                         <div class="advantage-content">
                             <el-icon><Opportunity /></el-icon>
-                            <h3>技术创新</h3>
-                            <p>拥有专业的研发团队，不断探索新配方，满足多样化的应用需求。</p>
+                            <h3>{{ t('home.innovation_title') }}</h3>
+                            <p>{{ t('home.innovation_text') }}</p>
                         </div>
                     </div>
                 </el-col>
                 <el-col :span="8" class="advantage-item-col">
-                     <div class="advantage-card" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1911&auto=format&fit=crop')">
+                    <div
+                        class="advantage-card"
+                        style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1911&auto=format&fit=crop')"
+                    >
                         <div class="advantage-content">
                             <el-icon><Service /></el-icon>
-                            <h3>专业服务</h3>
-                            <p>提供从选型到售后的全方位技术支持，为您解决粘接难题。</p>
+                            <h3>{{ t('home.service_title') }}</h3>
+                            <p>{{ t('home.service_text') }}</p>
                         </div>
                     </div>
                 </el-col>
@@ -44,7 +53,7 @@
         </div>
 
         <!-- Anchor Navigation -->
-        <div class="anchor-nav-section section-padding">
+        <div class="anchor-nav-section">
             <el-row :gutter="20">
                 <el-col :span="6">
                     <a href="#sealant-products" class="anchor-card" style="background-image: url('/images/nav/1.jpg')"></a>
@@ -63,12 +72,12 @@
 
         <!-- Product Sections -->
         <div id="sealant-products" class="products-section section-padding">
-            <el-row :gutter="40" align="middle">
+            <el-row :gutter="40" align="top">
                 <el-col :span="6">
                     <div class="category-sidebar">
-                        <h2 class="category-title">密封胶</h2>
-                        <p class="category-description">提供卓越的密封、防水和防尘性能，适用于建筑、汽车和电子等多个领域。</p>
-                        <el-button type="primary" plain @click="$router.push('/products')">查看全部</el-button>
+                        <h2 class="category-title">{{ t('home.sealant_title') }}</h2>
+                        <p class="category-description">{{ t('home.sealant_desc') }}</p>
+                        <el-button type="primary" plain @click="$router.push('/products')">{{ t('home.view_all') }}</el-button>
                     </div>
                 </el-col>
                 <el-col :span="18">
@@ -77,12 +86,12 @@
             </el-row>
         </div>
         <div id="ab-glue-products" class="products-section section-padding bg-light">
-            <el-row :gutter="40" align="middle">
+            <el-row :gutter="40" align="top">
                 <el-col :span="6">
                     <div class="category-sidebar">
-                        <h2 class="category-title">AB胶</h2>
-                        <p class="category-description">高强度、快速固化的结构胶粘剂，适用于金属、塑料、陶瓷等多种材料的粘接。</p>
-                        <el-button type="primary" plain @click="$router.push('/products')">查看全部</el-button>
+                        <h2 class="category-title">{{ t('home.ab_glue_title') }}</h2>
+                        <p class="category-description">{{ t('home.ab_glue_desc') }}</p>
+                        <el-button type="primary" plain @click="$router.push('/products')">{{ t('home.view_all') }}</el-button>
                     </div>
                 </el-col>
                 <el-col :span="18">
@@ -91,12 +100,12 @@
             </el-row>
         </div>
         <div id="502-glue-products" class="products-section section-padding">
-            <el-row :gutter="40" align="middle">
+            <el-row :gutter="40" align="top">
                 <el-col :span="6">
                     <div class="category-sidebar">
-                        <h2 class="category-title">502胶</h2>
-                        <p class="category-description">瞬间强力粘接，广泛用于家庭维修、手工艺制作和工业生产中的快速固定。</p>
-                        <el-button type="primary" plain @click="$router.push('/products')">查看全部</el-button>
+                        <h2 class="category-title">{{ t('home.glue_502_title') }}</h2>
+                        <p class="category-description">{{ t('home.glue_502_desc') }}</p>
+                        <el-button type="primary" plain @click="$router.push('/products')">{{ t('home.view_all') }}</el-button>
                     </div>
                 </el-col>
                 <el-col :span="18">
@@ -105,12 +114,12 @@
             </el-row>
         </div>
         <div id="tape-products" class="products-section section-padding bg-light">
-            <el-row :gutter="40" align="middle">
+            <el-row :gutter="40" align="top">
                 <el-col :span="6">
                     <div class="category-sidebar">
-                        <h2 class="category-title">电工胶布</h2>
-                        <p class="category-description">优良的绝缘性能和阻燃性，为电气作业提供可靠的安全保障。</p>
-                        <el-button type="primary" plain @click="$router.push('/products')">查看全部</el-button>
+                        <h2 class="category-title">{{ t('home.tape_title') }}</h2>
+                        <p class="category-description">{{ t('home.tape_desc') }}</p>
+                        <el-button type="primary" plain @click="$router.push('/products')">{{ t('home.view_all') }}</el-button>
                     </div>
                 </el-col>
                 <el-col :span="18">
@@ -121,19 +130,19 @@
 
         <!-- Company Strength Section -->
         <div class="strength-section section-padding">
-             <h2 class="section-title">实力见证</h2>
+            <h2 class="section-title">{{ t('home.strength_title') }}</h2>
             <el-row :gutter="40">
                 <el-col :span="8" class="strength-item">
                     <div class="strength-number">1,200+</div>
-                    <div class="strength-label">服务客户</div>
+                    <div class="strength-label">{{ t('home.strength_clients') }}</div>
                 </el-col>
                 <el-col :span="8" class="strength-item">
                     <div class="strength-number">5,000T+</div>
-                    <div class="strength-label">年产量</div>
+                    <div class="strength-label">{{ t('home.strength_output') }}</div>
                 </el-col>
                 <el-col :span="8" class="strength-item">
                     <div class="strength-number">300+</div>
-                    <div class="strength-label">产品种类</div>
+                    <div class="strength-label">{{ t('home.strength_products') }}</div>
                 </el-col>
             </el-row>
         </div>
@@ -149,11 +158,11 @@
                     />
                 </el-col>
                 <el-col :span="12" class="choose-us-content">
-                    <h2 class="section-title">为什么选择我们？</h2>
+                    <h2 class="section-title">{{ t('home.why_choose_us_title') }}</h2>
                     <p>
-                        我们不仅仅是胶水供应商，更是您可靠的合作伙伴。我们深入了解您的行业需求，提供量身定制的解决方案，帮助您提高生产效率、降低成本，并在激烈的市场竞争中脱颖而出。
+                        {{ t('home.why_choose_us_text') }}
                     </p>
-                    <el-button type="primary" plain>联系我们</el-button>
+                    <el-button type="primary" plain>{{ t('home.contact_us_button') }}</el-button>
                 </el-col>
             </el-row>
         </div>
@@ -165,17 +174,18 @@ import { computed } from 'vue';
 import { Box, Opportunity, Service } from '@element-plus/icons-vue';
 import { useProducts } from '@/composables/useProducts';
 
+const { t } = useI18n({ useScope: 'global' });
 const { products } = useProducts();
 
-const sealantProducts = computed(() => products.value.filter(p => p.category === '密封胶').slice(0, 4));
-const abGlueProducts = computed(() => products.value.filter(p => p.category === 'AB胶').slice(0, 4));
-const glue502Products = computed(() => products.value.filter(p => p.category === '502胶').slice(0, 4));
-const tapeProducts = computed(() => products.value.filter(p => p.category === '电工胶布').slice(0, 4));
+const sealantProducts = computed(() => products.value.filter((p) => p.category === 'sealant'));
+const abGlueProducts = computed(() => products.value.filter((p) => p.category === 'ab_glue'));
+const glue502Products = computed(() => products.value.filter((p) => p.category === 'glue_502'));
+const tapeProducts = computed(() => products.value.filter((p) => p.category === 'tape'));
 </script>
 
 <style>
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 .bg-light {
     background-color: #f7f8fa;
@@ -247,8 +257,11 @@ html {
 .advantage-card::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%);
     transition: background 0.4s ease;
 }
 .advantage-card:hover {
@@ -256,7 +269,7 @@ html {
     z-index: 10;
 }
 .advantage-card:hover::before {
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.1) 70%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.1) 70%);
 }
 .advantage-content {
     position: relative;
@@ -291,12 +304,14 @@ html {
 /* New Anchor Navigation */
 .anchor-nav-section {
     /* The .section-padding class handles max-width and centering */
+    margin: 20px auto 40px;
+    max-width: 1440px;
 }
 .anchor-card {
     display: block;
-    height: 200px;
+    height: 160px;
     border-radius: 8px;
-    background-size: contain;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
     text-decoration: none;
@@ -306,7 +321,7 @@ html {
 
 .anchor-card:hover {
     transform: scale(1.03);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Products Section */

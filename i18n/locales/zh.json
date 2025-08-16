@@ -1,0 +1,49 @@
+{
+    "navigation": {
+        "home": "首页",
+        "products": "产品",
+        "about": "关于我们",
+        "contact": "联系我们"
+    },
+    "header": {
+        "search_placeholder": "搜索产品...",
+        "call_us": "联系电话: +86 123 4567 8901"
+    },
+    "footer": {
+        "about_us": "关于我们",
+        "about_us_text": "我们是领先的工业胶水解决方案提供商，致力于为全球客户提供高质量、高性能的粘合剂产品。",
+        "product_series": "产品系列",
+        "contact_us": "联系方式",
+        "contact_email": "邮箱: contact&#64;industrial-glue.com",
+        "contact_phone": "电话: +86 123 4567 8901",
+        "contact_address": "地址: 中国上海市工业园区123号",
+        "follow_us": "关注我们",
+        "copyright": "© 2025 工业胶水公司. 版权所有."
+    },
+    "home": {
+        "advantages_title": "我们的优势",
+        "quality_title": "质量可靠",
+        "quality_text": "采用优质原料，通过国际标准认证，确保每一滴胶水的卓越性能。",
+        "innovation_title": "技术创新",
+        "innovation_text": "拥有专业的研发团队，不断探索新配方，满足多样化的应用需求。",
+        "service_title": "专业服务",
+        "service_text": "提供从选型到售后的全方位技术支持，为您解决粘接难题。",
+        "sealant_title": "密封胶",
+        "sealant_desc": "提供卓越的密封、防水和防尘性能，适用于建筑、汽车和电子等多个领域。",
+        "ab_glue_title": "AB胶",
+        "ab_glue_desc": "高强度、快速固化的结构胶粘剂，适用于金属、塑料、陶瓷等多种材料的粘接。",
+        "glue_502_title": "502胶",
+        "glue_502_desc": "瞬间强力粘接，广泛用于家庭维修、手工艺制作和工业生产中的快速固定。",
+        "tape_title": "电工胶布",
+        "tape_desc": "优良的绝缘性能和阻燃性，为电气作业提供可靠的安全保障。",
+        "view_all": "查看全部",
+        "strength_title": "实力见证",
+        "strength_clients": "服务客户",
+        "strength_output": "年产量",
+        "strength_products": "产品种类",
+        "why_choose_us_title": "为什么选择我们？",
+        "why_choose_us_text": "我们不仅仅是胶水供应商，更是您可靠的合作伙伴。我们深入了解您的行业需求，提供量身定制的解决方案，帮助您提高生产效率、降低成本，并在激烈的市场竞争中脱颖而出。",
+        "contact_us_button": "联系我们"
+    },
+    "floating_contact": "扫码联系 WhatsApp"
+}
