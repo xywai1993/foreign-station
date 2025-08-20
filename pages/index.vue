@@ -175,10 +175,8 @@ import { Box, Opportunity, Service } from '@element-plus/icons-vue';
 import { useProducts } from '@/composables/useProducts';
 
 const { t } = useI18n({ useScope: 'global' });
-const { data: products } = await useAsyncData('products', () => $fetch('/_data/products.json'));
-
-console.log(products.value);
-
+// const { data: products } = await useAsyncData('products', () => $fetch('/_data/products.json'));
+const { products } = useProducts();
 const sealantProducts = computed(() => (products.value ?? []).filter((p) => p.category.name === 'RTV Silicone Gasket Maker'));
 const abGlueProducts = computed(() => (products.value ?? []).filter((p) => p.category.name === 'AB Adhesives'));
 const glue502Products = computed(() => (products.value ?? []).filter((p) => p.category.name === 'Super Glue'));

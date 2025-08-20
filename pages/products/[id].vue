@@ -44,13 +44,14 @@
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { useProducts } from '@/composables/useProducts';
-
 const route = useRoute();
-const { data: products } = await useAsyncData('products', () => $fetch('/_data/products.json'));
-
+// const { data: products, error } = await useAsyncData('products', () => $fetch('/_data/products.json'));
+const { products } = useProducts();
+// 判空和类型兼容，避免 SSG/SSR 500 错误
 const product = computed(() => {
-    const productId = route.params.id;
-    return products.value.find((p) => p.id === productId || p._id === productId);
+    const list = products.value ?? [];
+    // 兼容 id 或 _id 字段
+    return list.find((p: any) => p._id === route.params.id || p.id === route.params.id);
 });
 </script>
 
