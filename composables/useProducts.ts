@@ -1,6 +1,8 @@
 import { ref } from 'vue';
+import { useRuntimeConfig } from '#imports';
 
-const products = ref([
+// 原有静态数据作为本地回退（fallback），当没有后端 API 可用时仍能显示产品。
+const fallbackProducts = ref([
     // 密封胶
     {
         id: 1,
@@ -174,7 +176,11 @@ const products = ref([
         category: 'tape',
         description: '良好的绝缘性能和阻燃性，用于电线缠绕和绝缘保护。',
         image: '/images/jb/jb--01.jpg',
-        details: {},
+        details: {
+            features: ['超高粘接强度', '优异的耐化学性', '耐高温', '适用于多种基材'],
+            applications: '广泛用于航空航天、汽车制造、电子封装和建筑结构加固。',
+            specs: '颜色：透明/淡黄色 | 固化时间：24小时 | 操作时间：30分钟 | 剪切强度：>20 MPa',
+        },
     },
 ]);
 
@@ -184,12 +190,52 @@ const detailSample = {
     specs: '颜色：透明/淡黄色 | 固化时间：24小时 | 操作时间：30分钟 | 剪切强度：>20 MPa',
 };
 
-products.value.forEach((p) => {
+fallbackProducts.value.forEach((p) => {
     p.details = detailSample;
 });
 
 export const useProducts = () => {
+    // SSG/SSR/CSR 通用，直接用 $fetch 拉取静态 JSON 文件
+    const products = useState('products', () => []);
+    const loading = ref(false);
+    const error = ref<any>(null);
+
+    // 初始化时拉取静态 JSON
+    const fetchStaticProducts = async () => {
+        loading.value = true;
+        try {
+            const data = await $fetch('/_data/products.json');
+            if (Array.isArray(data)) {
+                products.value = data;
+            } else {
+                products.value = fallbackProducts.value.slice();
+            }
+            error.value = null;
+        } catch (e) {
+            products.value = fallbackProducts.value.slice();
+            error.value = e;
+        } finally {
+            loading.value = false;
+        }
+    };
+
+    // SSR/CSR 自动拉取
+    if (products.value.length === 0) {
+        fetchStaticProducts();
+    }
+
+    // 保留 fetchProducts 方法，支持强制刷新
+    const fetchProducts = async ({ force = false } = {}) => {
+        if (loading.value) return products;
+        if (!force && products.value && products.value.length > 0) return products;
+        await fetchStaticProducts();
+        return products;
+    };
+
     return {
         products,
+        fetchProducts,
+        loading,
+        error,
     };
 };

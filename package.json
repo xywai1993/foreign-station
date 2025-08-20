@@ -1,25 +1,26 @@
 {
-  "name": "foreign-station",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "deploy": "npm run generate && gh-pages -d .output/public"
-  },
-  "devDependencies": {
-    "@nuxtjs/i18n": "^10.0.5",
-    "gh-pages": "^6.3.0",
-    "nuxt": "latest",
-    "vue": "^3.4.29",
-    "vue-router": "^4.3.3"
-  },
-  "dependencies": {
-    "@element-plus/icons-vue": "^2.3.1",
-    "@element-plus/nuxt": "^1.1.4",
-    "@nuxt/kit": "^4.0.2",
-    "element-plus": "^2.10.5"
-  }
+    "name": "foreign-station",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "fetch:cms": "node ./scripts/fetch-cms-products.js",
+        "build": "npm run fetch:cms && nuxt generate",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "deploy": "npm run generate && gh-pages -d .output/public"
+    },
+    "devDependencies": {
+        "@nuxtjs/i18n": "^10.0.5",
+        "gh-pages": "^6.3.0",
+        "nuxt": "latest",
+        "vue": "^3.4.29",
+        "vue-router": "^4.3.3"
+    },
+    "dependencies": {
+        "@element-plus/icons-vue": "^2.3.1",
+        "@element-plus/nuxt": "^1.1.4",
+        "@nuxt/kit": "^4.0.2",
+        "element-plus": "^2.10.5"
+    }
 }

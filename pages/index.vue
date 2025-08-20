@@ -177,10 +177,10 @@ import { useProducts } from '@/composables/useProducts';
 const { t } = useI18n({ useScope: 'global' });
 const { products } = useProducts();
 
-const sealantProducts = computed(() => products.value.filter((p) => p.category === 'sealant'));
-const abGlueProducts = computed(() => products.value.filter((p) => p.category === 'ab_glue'));
-const glue502Products = computed(() => products.value.filter((p) => p.category === 'glue_502'));
-const tapeProducts = computed(() => products.value.filter((p) => p.category === 'tape'));
+const sealantProducts = computed(() => products.value.filter((p) => p.category.name === 'RTV Silicone Gasket Maker'));
+const abGlueProducts = computed(() => products.value.filter((p) => p.category.name === 'AB Adhesives'));
+const glue502Products = computed(() => products.value.filter((p) => p.category.name === 'Super Glue'));
+const tapeProducts = computed(() => products.value.filter((p) => p.category.name === 'PVC Wire Harness Insulation Tape'));
 </script>
 
 <style>

@@ -1,3 +1,12 @@
+import fs from 'fs';
+let productRoutes: string[] = [];
+try {
+    const products = JSON.parse(fs.readFileSync('public/_data/products.json', 'utf8'));
+    productRoutes = products.map((p: any) => `/products/${p.id}`);
+} catch (e) {
+    // 忽略错误
+}
+
 export default defineNuxtConfig({
     pages: true,
     compatibilityDate: '2025-07-15',
@@ -15,5 +24,10 @@ export default defineNuxtConfig({
             { code: 'zh', name: '中文', file: 'zh.json' },
         ],
         defaultLocale: 'zh',
+    },
+    nitro: {
+        prerender: {
+            routes: ['/', '/about', '/contact', '/products', ...productRoutes],
+        },
     },
 });
