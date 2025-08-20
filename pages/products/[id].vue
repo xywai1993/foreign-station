@@ -46,7 +46,7 @@ import { useRoute } from 'vue-router';
 import { useProducts } from '@/composables/useProducts';
 
 const route = useRoute();
-const { products } = useProducts();
+const { data: products } = await useAsyncData('products', () => $fetch('/_data/products.json'));
 
 const product = computed(() => {
     const productId = route.params.id;

@@ -175,12 +175,14 @@ import { Box, Opportunity, Service } from '@element-plus/icons-vue';
 import { useProducts } from '@/composables/useProducts';
 
 const { t } = useI18n({ useScope: 'global' });
-const { products } = useProducts();
+const { data: products } = await useAsyncData('products', () => $fetch('/_data/products.json'));
 
-const sealantProducts = computed(() => products.value.filter((p) => p.category.name === 'RTV Silicone Gasket Maker'));
-const abGlueProducts = computed(() => products.value.filter((p) => p.category.name === 'AB Adhesives'));
-const glue502Products = computed(() => products.value.filter((p) => p.category.name === 'Super Glue'));
-const tapeProducts = computed(() => products.value.filter((p) => p.category.name === 'PVC Wire Harness Insulation Tape'));
+console.log(products.value);
+
+const sealantProducts = computed(() => (products.value ?? []).filter((p) => p.category.name === 'RTV Silicone Gasket Maker'));
+const abGlueProducts = computed(() => (products.value ?? []).filter((p) => p.category.name === 'AB Adhesives'));
+const glue502Products = computed(() => (products.value ?? []).filter((p) => p.category.name === 'Super Glue'));
+const tapeProducts = computed(() => (products.value ?? []).filter((p) => p.category.name === 'PVC Wire Harness Insulation Tape'));
 </script>
 
 <style>
