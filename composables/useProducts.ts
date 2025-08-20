@@ -1,5 +1,5 @@
+import productsData from '~/public/_data/products.json';
 import { ref } from 'vue';
-import { useRuntimeConfig } from '#imports';
 
 // 原有静态数据作为本地回退（fallback），当没有后端 API 可用时仍能显示产品。
 const fallbackProducts = ref([
@@ -195,47 +195,19 @@ fallbackProducts.value.forEach((p) => {
 });
 
 export const useProducts = () => {
-    // SSG/SSR/CSR 通用，直接用 $fetch 拉取静态 JSON 文件
-    const products = useState('products', () => []);
-    const loading = ref(false);
-    const error = ref<any>(null);
-
-    // 初始化时拉取静态 JSON
-    const fetchStaticProducts = async () => {
-        loading.value = true;
-        try {
-            const data = await $fetch('/_data/products.json');
-            if (Array.isArray(data)) {
-                products.value = data;
-            } else {
-                products.value = fallbackProducts.value.slice();
-            }
-            error.value = null;
-        } catch (e) {
-            products.value = fallbackProducts.value.slice();
-            error.value = e;
-        } finally {
-            loading.value = false;
+    // 2. 使用 useState 初始化产品数据，如果导入的数据无效，则使用回退数据
+    const products = useState('products', () => {
+        // 优先使用导入的 JSON 数据
+        if (Array.isArray(productsData) && productsData.length > 0) {
+            return productsData;
         }
-    };
+        // 否则使用文件内的回退数据
+        return fallbackProducts.value;
+    });
 
-    // SSR/CSR 自动拉取
-    if (products.value.length === 0) {
-        fetchStaticProducts();
-    }
-
-    // 保留 fetchProducts 方法，支持强制刷新
-    const fetchProducts = async ({ force = false } = {}) => {
-        if (loading.value) return products;
-        if (!force && products.value && products.value.length > 0) return products;
-        await fetchStaticProducts();
-        return products;
-    };
-
+    // 3. 由于数据是直接导入的，不再需要 fetch、loading 和 error 状态
+    //    我们可以大大简化这个 composable
     return {
         products,
-        fetchProducts,
-        loading,
-        error,
     };
 };
