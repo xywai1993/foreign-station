@@ -7,18 +7,18 @@
     },
     "header": {
         "search_placeholder": "搜索产品...",
-        "call_us": "联系电话: +86 123 4567 8901"
+        "call_us": "联系电话: +86 18025347436"
     },
     "footer": {
         "about_us": "关于我们",
         "about_us_text": "我们是领先的工业胶水解决方案提供商，致力于为全球客户提供高质量、高性能的粘合剂产品。",
         "product_series": "产品系列",
         "contact_us": "联系方式",
-        "contact_email": "邮箱: contact&#64;industrial-glue.com",
-        "contact_phone": "电话: +86 123 4567 8901",
-        "contact_address": "地址: 中国上海市工业园区123号",
+        "contact_email": "邮箱: joufson{'@'}joufson.com",
+        "contact_phone": "电话: +86 18025347436",
+        "contact_address": "地址: 201, Huanyu Building Podium, No. 1002 Hongling Middle Road, Lao wei Community, Guiyuan Street, Luohu District, Shenzhen",
         "follow_us": "关注我们",
-        "copyright": "© 2025 工业胶水公司. 版权所有."
+        "copyright": "© 2025 joufson. 版权所有."
     },
     "home": {
         "advantages_title": "我们的优势",
@@ -45,5 +45,41 @@
         "why_choose_us_text": "我们不仅仅是胶水供应商，更是您可靠的合作伙伴。我们深入了解您的行业需求，提供量身定制的解决方案，帮助您提高生产效率、降低成本，并在激烈的市场竞争中脱颖而出。",
         "contact_us_button": "联系我们"
     },
-    "floating_contact": "扫码联系 WhatsApp"
+    "floating_contact": "扫码联系 WhatsApp",
+    "about": {
+        "title": "关于我们",
+        "subtitle": "我们不仅仅是胶水制造商，我们是您创新的合作伙伴。",
+        "mission_title": "我们的使命",
+        "mission_text": "通过提供卓越的胶粘剂技术和无与伦比的客户服务，帮助我们的客户取得成功。我们致力于持续创新，为各种工业应用提供可靠、高效和环保的解决方案。",
+        "history_title": "发展历程",
+        "history_2005_title": "公司成立",
+        "history_2005_text": "在一个小车库里，我们开始了对高性能胶粘剂的探索。",
+        "history_2010_title": "首次重大突破",
+        "history_2010_text": "成功研发出第一款具有自主知识产权的环氧树脂胶。",
+        "history_2018_title": "建立新工厂",
+        "history_2018_text": "扩大生产规模，引进了全自动生产线。",
+        "history_2023_title": "服务全球客户",
+        "history_2023_text": "产品远销全球30多个国家和地区。"
+    },
+    "contact": {
+        "title": "联系我们",
+        "subtitle": "我们期待与您交流，解答您的疑问，共同探讨合作机会。",
+        "form_title": "发送在线消息",
+        "form_desc": "请填写下表，我们的技术顾问会尽快与您联系。",
+        "form_name_label": "您的姓名",
+        "form_name_placeholder": "请输入您的姓名",
+        "form_email_label": "您的邮箱",
+        "form_email_placeholder": "请输入您的电子邮箱",
+        "form_message_label": "您的留言",
+        "form_message_placeholder": "请在此输入您的需求或问题",
+        "form_submit_button": "立即提交",
+        "info_title": "联系信息",
+        "info_address": "地址",
+        "info_phone": "电话",
+        "info_email": "邮箱",
+        "validation_name_required": "姓名为必填项",
+        "validation_email_required": "邮箱为必填项",
+        "validation_email_invalid": "请输入有效的邮箱地址",
+        "validation_message_required": "留言为必填项"
+    }
 }

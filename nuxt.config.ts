@@ -23,7 +23,7 @@ export default defineNuxtConfig({
             { code: 'en', name: 'English', file: 'en.json' },
             { code: 'zh', name: '中文', file: 'zh.json' },
         ],
-        defaultLocale: 'zh',
+        defaultLocale: 'en',
     },
     nitro: {
         prerender: {

@@ -31,7 +31,7 @@
                 <div class="nav-bar-content">
                     <nav class="custom-main-menu">
                         <NuxtLink to="/" class="custom-menu-item">{{ t('navigation.home') }}</NuxtLink>
-                        <NuxtLink to="/products" class="custom-menu-item">{{ t('navigation.products') }}</NuxtLink>
+                        <!-- <NuxtLink to="/products" class="custom-menu-item">{{ t('navigation.products') }}</NuxtLink> -->
                         <NuxtLink to="/about" class="custom-menu-item">{{ t('navigation.about') }}</NuxtLink>
                         <NuxtLink to="/contact" class="custom-menu-item">{{ t('navigation.contact') }}</NuxtLink>
                     </nav>
@@ -103,7 +103,7 @@
                 <el-icon><ChatDotRound /></el-icon>
             </div>
             <div class="qr-code-popup">
-                <img src="https://placehold.co/200x200/png?text=WhatsApp+QR" alt="WhatsApp QR Code" />
+                <img src="/public/images/whatsapp.jpg" alt="WhatsApp QR Code" />
                 <p>{{ t('floating_contact') }}</p>
             </div>
         </div>

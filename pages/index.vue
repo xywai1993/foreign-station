@@ -72,60 +72,28 @@
 
         <!-- Product Sections -->
         <div id="sealant-products" class="products-section section-padding">
-            <el-row :gutter="40" align="top">
-                <el-col :span="6">
-                    <div class="category-sidebar">
-                        <h2 class="category-title">{{ t('home.sealant_title') }}</h2>
-                        <p class="category-description">{{ t('home.sealant_desc') }}</p>
-                        <el-button type="primary" plain @click="$router.push('/products')">{{ t('home.view_all') }}</el-button>
-                    </div>
-                </el-col>
-                <el-col :span="18">
-                    <ProductRow :products="sealantProducts" />
-                </el-col>
-            </el-row>
+            <NuxtLink to="/products" class="category-sidebar" style="background-image: url('/images/bg/a.jpg')"></NuxtLink>
+            <div class="product-list-wrapper">
+                <ProductRow :products="sealantProducts" />
+            </div>
         </div>
         <div id="ab-glue-products" class="products-section section-padding bg-light">
-            <el-row :gutter="40" align="top">
-                <el-col :span="6">
-                    <div class="category-sidebar">
-                        <h2 class="category-title">{{ t('home.ab_glue_title') }}</h2>
-                        <p class="category-description">{{ t('home.ab_glue_desc') }}</p>
-                        <el-button type="primary" plain @click="$router.push('/products')">{{ t('home.view_all') }}</el-button>
-                    </div>
-                </el-col>
-                <el-col :span="18">
-                    <ProductRow :products="abGlueProducts" />
-                </el-col>
-            </el-row>
+            <NuxtLink to="/products" class="category-sidebar" style="background-image: url('/images/bg/c.jpg')"></NuxtLink>
+            <div class="product-list-wrapper">
+                <ProductRow :products="abGlueProducts" />
+            </div>
         </div>
         <div id="502-glue-products" class="products-section section-padding">
-            <el-row :gutter="40" align="top">
-                <el-col :span="6">
-                    <div class="category-sidebar">
-                        <h2 class="category-title">{{ t('home.glue_502_title') }}</h2>
-                        <p class="category-description">{{ t('home.glue_502_desc') }}</p>
-                        <el-button type="primary" plain @click="$router.push('/products')">{{ t('home.view_all') }}</el-button>
-                    </div>
-                </el-col>
-                <el-col :span="18">
-                    <ProductRow :products="glue502Products" />
-                </el-col>
-            </el-row>
+            <NuxtLink to="/products" class="category-sidebar" style="background-image: url('/images/bg/d.jpg')"></NuxtLink>
+            <div class="product-list-wrapper">
+                <ProductRow :products="glue502Products" />
+            </div>
         </div>
         <div id="tape-products" class="products-section section-padding bg-light">
-            <el-row :gutter="40" align="top">
-                <el-col :span="6">
-                    <div class="category-sidebar">
-                        <h2 class="category-title">{{ t('home.tape_title') }}</h2>
-                        <p class="category-description">{{ t('home.tape_desc') }}</p>
-                        <el-button type="primary" plain @click="$router.push('/products')">{{ t('home.view_all') }}</el-button>
-                    </div>
-                </el-col>
-                <el-col :span="18">
-                    <ProductRow :products="tapeProducts" />
-                </el-col>
-            </el-row>
+            <NuxtLink to="/products" class="category-sidebar" style="background-image: url('/images/bg/b.jpg')"></NuxtLink>
+            <div class="product-list-wrapper">
+                <ProductRow :products="tapeProducts" />
+            </div>
         </div>
 
         <!-- Company Strength Section -->
@@ -327,28 +295,31 @@ html {
 /* Products Section */
 .products-section {
     background-color: #fff;
+    display: flex;
+    gap: 40px;
+    align-items: stretch; /* Make columns same height */
 }
 .products-section.bg-light {
     background-color: #f7f8fa;
 }
 
+.product-list-wrapper {
+    flex: 1;
+    min-width: 0; /* Fix for potential overflow issues in flex items */
+}
+
 .category-sidebar {
-    padding-right: 30px; /* Add some space between sidebar and products */
+    flex: 0 0 25%;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: left top;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
 }
 
-.category-title {
-    font-size: 2.2em;
-    font-weight: bold;
-    color: #303133;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.category-description {
-    font-size: 1.1em;
-    color: #606266;
-    line-height: 1.7;
-    margin-bottom: 30px;
+.category-sidebar:hover {
+    transform: scale(1.03);
 }
 
 /* Strength Section */

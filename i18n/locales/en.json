@@ -7,27 +7,27 @@
     },
     "header": {
         "search_placeholder": "Search for products...",
-        "call_us": "Call Us: +86 123 4567 8901"
+        "call_us": "Call Us: +86 18025347436"
     },
     "footer": {
         "about_us": "About Us",
         "about_us_text": "We are a leading provider of industrial adhesive solutions, dedicated to providing high-quality, high-performance adhesive products to customers worldwide.",
         "product_series": "Product Series",
         "contact_us": "Contact Us",
-        "contact_email": "Email: contact&#64;industrial-glue.com",
-        "contact_phone": "Phone: +86 123 4567 8901",
-        "contact_address": "Address: 123 Industrial Park, Shanghai, China",
+        "contact_email": "Email: joufson{'@'}joufson.com",
+        "contact_phone": "Phone: +86 18025347436",
+        "contact_address": "Address: 201, Huanyu Building Podium, No. 1002 Hongling Middle Road, Lao wei Community, Guiyuan Street, Luohu District, Shenzhen",
         "follow_us": "Follow Us",
-        "copyright": "© 2025 Industrial Glue Company. All rights reserved."
+        "copyright": "© 2025 joufson. All rights reserved."
     },
     "home": {
         "advantages_title": "Our Advantages",
-        "quality_title": "Reliable Quality",
-        "quality_text": "Using high-quality raw materials and certified by international standards to ensure the excellent performance of every drop of glue.",
-        "innovation_title": "Technological Innovation",
-        "innovation_text": "With a professional R&D team, we continuously explore new formulas to meet diverse application needs.",
-        "service_title": "Professional Service",
-        "service_text": "Providing comprehensive technical support from model selection to after-sales service to solve your bonding problems.",
+        "quality_title": "Customization Support",
+        "quality_text": "Including brand & packaging customization",
+        "innovation_title": "Stable supply Capacity",
+        "innovation_text": "Reliable and consistent production & delivery",
+        "service_title": "comprehensive After-Sales Service",
+        "service_text": "Full-cycle customer support & issue resolution",
         "sealant_title": "Sealant",
         "sealant_desc": "Provides excellent sealing, waterproof and dustproof performance, suitable for construction, automotive and electronic fields.",
         "ab_glue_title": "AB Glue",
@@ -45,5 +45,41 @@
         "why_choose_us_text": "We are more than just a glue supplier, we are your reliable partner. We have a deep understanding of your industry needs, provide tailor-made solutions to help you improve production efficiency, reduce costs, and stand out in the fierce market competition.",
         "contact_us_button": "Contact Us"
     },
-    "floating_contact": "Scan to contact via WhatsApp"
+    "floating_contact": "Scan to contact via WhatsApp",
+    "about": {
+        "title": "About Us",
+        "subtitle": "We are more than just glue manufacturers; we are your partners in innovation.",
+        "mission_title": "Our Mission",
+        "mission_text": "To help our customers succeed by providing superior adhesive technology and unparalleled customer service. We are committed to continuous innovation to provide reliable, efficient, and environmentally friendly solutions for various industrial applications.",
+        "history_title": "Our History",
+        "history_2005_title": "Company Founded",
+        "history_2005_text": "In a small garage, we began our exploration of high-performance adhesives.",
+        "history_2010_title": "First Major Breakthrough",
+        "history_2010_text": "Successfully developed the first epoxy resin adhesive with independent intellectual property rights.",
+        "history_2018_title": "New Factory Established",
+        "history_2018_text": "Expanded production scale and introduced fully automated production lines.",
+        "history_2023_title": "Serving Global Customers",
+        "history_2023_text": "Our products are sold in more than 30 countries and regions worldwide."
+    },
+    "contact": {
+        "title": "Contact Us",
+        "subtitle": "We look forward to communicating with you, answering your questions, and exploring opportunities for cooperation.",
+        "form_title": "Send an Online Message",
+        "form_desc": "Please fill out the form below, and our technical consultant will contact you as soon as possible.",
+        "form_name_label": "Your Name",
+        "form_name_placeholder": "Please enter your name",
+        "form_email_label": "Your Email",
+        "form_email_placeholder": "Please enter your email address",
+        "form_message_label": "Your Message",
+        "form_message_placeholder": "Please enter your needs or questions here",
+        "form_submit_button": "Submit Now",
+        "info_title": "Contact Information",
+        "info_address": "Address",
+        "info_phone": "Phone",
+        "info_email": "Email",
+        "validation_name_required": "Name is required",
+        "validation_email_required": "Email is required",
+        "validation_email_invalid": "Please enter a valid email address",
+        "validation_message_required": "Message is required"
+    }
 }

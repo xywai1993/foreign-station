@@ -2,46 +2,46 @@
   <div class="contact-page">
     <!-- Page Header -->
     <div class="page-header">
-      <h1>联系我们</h1>
-      <p>我们期待与您交流，解答您的疑问，共同探讨合作机会。</p>
+      <h1>{{ t('contact.title') }}</h1>
+      <p>{{ t('contact.subtitle') }}</p>
     </div>
 
     <div class="page-content">
       <el-row :gutter="40">
         <!-- Contact Form -->
         <el-col :span="12">
-          <h3>发送在线消息</h3>
-          <p>请填写下表，我们的技术顾问会尽快与您联系。</p>
+          <h3>{{ t('contact.form_title') }}</h3>
+          <p>{{ t('contact.form_desc') }}</p>
           <el-form ref="formRef" :model="form" :rules="rules" label-position="top">
-            <el-form-item label="您的姓名" prop="name">
-              <el-input v-model="form.name" placeholder="请输入您的姓名"></el-input>
+            <el-form-item :label="t('contact.form_name_label')" prop="name">
+              <el-input v-model="form.name" :placeholder="t('contact.form_name_placeholder')"></el-input>
             </el-form-item>
-            <el-form-item label="您的邮箱" prop="email">
-              <el-input v-model="form.email" placeholder="请输入您的电子邮箱"></el-input>
+            <el-form-item :label="t('contact.form_email_label')" prop="email">
+              <el-input v-model="form.email" :placeholder="t('contact.form_email_placeholder')"></el-input>
             </el-form-item>
-            <el-form-item label="您的留言" prop="message">
-              <el-input type="textarea" :rows="5" v-model="form.message" placeholder="请在此输入您的需求或问题"></el-input>
+            <el-form-item :label="t('contact.form_message_label')" prop="message">
+              <el-input type="textarea" :rows="5" v-model="form.message" :placeholder="t('contact.form_message_placeholder')"></el-input>
             </el-form-item>
             <el-form-item>
-              <el-button type="primary" @click="onSubmit">立即提交</el-button>
+              <el-button type="primary" @click="onSubmit">{{ t('contact.form_submit_button') }}</el-button>
             </el-form-item>
           </el-form>
         </el-col>
 
         <!-- Contact Info -->
         <el-col :span="12">
-          <h3>联系信息</h3>
+          <h3>{{ t('contact.info_title') }}</h3>
           <div class="contact-info-item">
             <el-icon><location /></el-icon>
-            <span>地址：中国上海市浦东新区世纪大道100号</span>
+            <span>{{ t('footer.contact_address') }}</span>
           </div>
           <div class="contact-info-item">
             <el-icon><phone /></el-icon>
-            <span>电话：+86 21 1234 5678</span>
+            <span>{{ t('footer.contact_phone') }}</span>
           </div>
           <div class="contact-info-item">
             <el-icon><message /></el-icon>
-            <span>邮箱：sales@industrial-glue.com</span>
+            <span>{{ t('footer.contact_email') }}</span>
           </div>
           
           <!-- Map -->
@@ -55,8 +55,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
+
+const { t } = useI18n({ useScope: 'global' });
 
 const formRef = ref<FormInstance>()
 const form = ref({
@@ -65,11 +67,14 @@ const form = ref({
   message: ''
 })
 
-const rules = ref<FormRules>({
-  name: [{ required: true, message: '姓名为必填项', trigger: 'blur' }],
-  email: [{ required: true, message: '邮箱为必填项', trigger: 'blur' }, { type: 'email', message: '请输入有效的邮箱地址', trigger: ['blur', 'change'] }],
-  message: [{ required: true, message: '留言为必填项', trigger: 'blur' }]
-})
+const rules = computed<FormRules>(() => ({
+  name: [{ required: true, message: t('contact.validation_name_required'), trigger: 'blur' }],
+  email: [
+    { required: true, message: t('contact.validation_email_required'), trigger: 'blur' },
+    { type: 'email', message: t('contact.validation_email_invalid'), trigger: ['blur', 'change'] }
+  ],
+  message: [{ required: true, message: t('contact.validation_message_required'), trigger: 'blur' }]
+}))
 
 const onSubmit = async () => {
   if (!formRef.value) return
