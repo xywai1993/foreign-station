@@ -72,25 +72,25 @@
 
         <!-- Product Sections -->
         <div id="sealant-products" class="products-section section-padding">
-            <NuxtLink to="/products" class="category-sidebar" style="background-image: url('/images/bg/a.jpg')"></NuxtLink>
+            <NuxtLink to="/" class="category-sidebar" style="background-image: url('/images/bg/a.jpg')"></NuxtLink>
             <div class="product-list-wrapper">
                 <ProductRow :products="sealantProducts" />
             </div>
         </div>
         <div id="ab-glue-products" class="products-section section-padding bg-light">
-            <NuxtLink to="/products" class="category-sidebar" style="background-image: url('/images/bg/c.jpg')"></NuxtLink>
+            <NuxtLink to="/" class="category-sidebar" style="background-image: url('/images/bg/c.jpg')"></NuxtLink>
             <div class="product-list-wrapper">
                 <ProductRow :products="abGlueProducts" />
             </div>
         </div>
         <div id="502-glue-products" class="products-section section-padding">
-            <NuxtLink to="/products" class="category-sidebar" style="background-image: url('/images/bg/d.jpg')"></NuxtLink>
+            <NuxtLink to="/" class="category-sidebar" style="background-image: url('/images/bg/d.jpg')"></NuxtLink>
             <div class="product-list-wrapper">
                 <ProductRow :products="glue502Products" />
             </div>
         </div>
         <div id="tape-products" class="products-section section-padding bg-light">
-            <NuxtLink to="/products" class="category-sidebar" style="background-image: url('/images/bg/b.jpg')"></NuxtLink>
+            <NuxtLink to="/" class="category-sidebar" style="background-image: url('/images/bg/b.jpg')"></NuxtLink>
             <div class="product-list-wrapper">
                 <ProductRow :products="tapeProducts" />
             </div>
