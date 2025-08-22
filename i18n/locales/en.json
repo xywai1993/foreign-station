@@ -45,6 +45,15 @@
         "why_choose_us_text": "We are more than just a glue supplier, we are your reliable partner. We have a deep understanding of your industry needs, provide tailor-made solutions to help you improve production efficiency, reduce costs, and stand out in the fierce market competition.",
         "contact_us_button": "Contact Us"
     },
+    "product": {
+        "get_quote": "Get Quote"
+    },
+    "products": {
+        "title": "Our Products",
+        "subtitle": "Explore our comprehensive line of industrial adhesives and find the perfect solution for your application.",
+        "all_categories": "All",
+        "view_details": "View Details"
+    },
     "floating_contact": "Scan to contact via WhatsApp",
     "about": {
         "title": "About Us",
@@ -80,6 +89,8 @@
         "validation_name_required": "Name is required",
         "validation_email_required": "Email is required",
         "validation_email_invalid": "Please enter a valid email address",
-        "validation_message_required": "Message is required"
+        "validation_message_required": "Message is required",
+        "redirecting_to_email": "Redirecting to your email client...",
+        "validation_error": "Please fill out the form correctly."
     }
 }

@@ -45,6 +45,15 @@
         "why_choose_us_text": "我们不仅仅是胶水供应商，更是您可靠的合作伙伴。我们深入了解您的行业需求，提供量身定制的解决方案，帮助您提高生产效率、降低成本，并在激烈的市场竞争中脱颖而出。",
         "contact_us_button": "联系我们"
     },
+    "product": {
+        "get_quote": "获取报价"
+    },
+    "products": {
+        "title": "我们的产品",
+        "subtitle": "探索我们全面的工业胶粘剂产品线，找到最适合您应用的解决方案。",
+        "all_categories": "全部",
+        "view_details": "查看详情"
+    },
     "floating_contact": "扫码联系 WhatsApp",
     "about": {
         "title": "关于我们",
@@ -80,6 +89,8 @@
         "validation_name_required": "姓名为必填项",
         "validation_email_required": "邮箱为必填项",
         "validation_email_invalid": "请输入有效的邮箱地址",
-        "validation_message_required": "留言为必填项"
+        "validation_message_required": "留言为必填项",
+        "redirecting_to_email": "正在跳转到您的邮件客户端...",
+        "validation_error": "请正确填写表单。"
     }
 }

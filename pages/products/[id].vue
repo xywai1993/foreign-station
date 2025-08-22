@@ -28,7 +28,7 @@
                             <p>{{ product.details.specs }}</p>
                         </div> -->
 
-                        <el-button type="primary" size="large" @click="$router.push('/contact')">获取报价</el-button>
+                        <el-button type="primary" size="large" @click="$router.push('/contact')">{{ t('product.get_quote') }}</el-button>
                     </div>
                 </el-col>
             </el-row>
@@ -44,6 +44,7 @@
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { useProducts } from '@/composables/useProducts';
+const { t } = useI18n();
 const route = useRoute();
 // const { data: products, error } = await useAsyncData('products', () => $fetch('/_data/products.json'));
 const { products } = useProducts();

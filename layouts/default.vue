@@ -13,11 +13,19 @@
                             </NuxtLink>
                         </el-col>
                         <el-col :span="11">
-                            <el-input :placeholder="t('header.search_placeholder')" class="search-bar">
+                            <el-autocomplete
+                                v-model="searchQuery"
+                                :fetch-suggestions="querySearch"
+                                :placeholder="t('header.search_placeholder')"
+                                class="search-bar"
+                                @select="handleSelect"
+                                :trigger-on-focus="false"
+                                clearable
+                            >
                                 <template #append>
                                     <el-button :icon="Search" />
                                 </template>
-                            </el-input>
+                            </el-autocomplete>
                         </el-col>
                         <el-col :span="7">
                             <span>{{ t('header.call_us') }}</span>
@@ -31,7 +39,7 @@
                 <div class="nav-bar-content">
                     <nav class="custom-main-menu">
                         <NuxtLink to="/" class="custom-menu-item">{{ t('navigation.home') }}</NuxtLink>
-                        <!-- <NuxtLink to="/products" class="custom-menu-item">{{ t('navigation.products') }}</NuxtLink> -->
+                        <NuxtLink to="/products" class="custom-menu-item">{{ t('navigation.products') }}</NuxtLink>
                         <NuxtLink to="/about" class="custom-menu-item">{{ t('navigation.about') }}</NuxtLink>
                         <NuxtLink to="/contact" class="custom-menu-item">{{ t('navigation.contact') }}</NuxtLink>
                     </nav>
@@ -114,9 +122,41 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import { ChatDotRound, Promotion, ChatDotSquare, Phone, Search } from '@element-plus/icons-vue';
 import LanguageSwitcher from '~/components/LanguageSwitcher.vue';
+import { useProducts } from '~/composables/useProducts';
+import { useRouter } from 'vue-router';
+import type { AutocompleteFetchSuggestionsCallback } from 'element-plus';
 
 const { t } = useI18n({ useScope: 'global' });
+const router = useRouter();
 
+// Search logic
+const searchQuery = ref('');
+const { products } = useProducts();
+
+interface Product {
+    _id: string;
+    name: string;
+    [key: string]: any;
+}
+
+const querySearch = (queryString: string, cb: AutocompleteFetchSuggestionsCallback) => {
+    const productList = products.value ?? [];
+    const results = queryString
+        ? productList
+              .filter((p: Product) => p.name.toLowerCase().includes(queryString.toLowerCase()))
+              .map((p: Product) => ({ value: p.name, id: p._id }))
+        : [];
+    cb(results);
+};
+
+const handleSelect = (item: Record<string, any>) => {
+    if (item.id) {
+        router.push(`/products/${item.id}`);
+        searchQuery.value = '';
+    }
+};
+
+// Header visibility on scroll
 const isHeaderVisible = ref(true);
 const lastScrollTop = ref(0);
 

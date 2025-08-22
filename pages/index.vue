@@ -3,8 +3,10 @@
         <!-- Hero Section -->
         <div class="hero-section">
             <el-carousel arrow="never">
-                <el-carousel-item v-for="i in 4" :key="i">
-                    <img :src="`/images/banner/banner--${i}.jpg`" class="hero-image" :alt="`Banner ${i}`" />
+                <el-carousel-item v-for="(category, index) in categories" :key="index">
+                    <NuxtLink :to="{ path: '/products', query: { category: category } }">
+                        <img :src="`/images/banner/banner--${index + 1}.jpg`" class="hero-image" :alt="`Banner ${index + 1}`" />
+                    </NuxtLink>
                 </el-carousel-item>
             </el-carousel>
         </div>
@@ -28,7 +30,9 @@
                 <el-col :span="8" class="advantage-item-col">
                     <div
                         class="advantage-card"
-                        style="background-image: url('https://images.unsplash.com/photo-1600880292210-85938b023555?q=80&w=2070&auto=format&fit=crop')"
+                        style="
+                            background-image: url('https://images.pexels.com/photos/4482900/pexels-photo-4482900.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+                        "
                     >
                         <div class="advantage-content">
                             <el-icon><Opportunity /></el-icon>
@@ -72,25 +76,41 @@
 
         <!-- Product Sections -->
         <div id="sealant-products" class="products-section section-padding">
-            <NuxtLink to="/" class="category-sidebar" style="background-image: url('/images/bg/a.jpg')"></NuxtLink>
+            <NuxtLink
+                :to="{ path: '/products', query: { category: 'RTV Silicone Gasket Maker' } }"
+                class="category-sidebar"
+                style="background-image: url('/images/bg/a.jpg')"
+            ></NuxtLink>
             <div class="product-list-wrapper">
                 <ProductRow :products="sealantProducts" />
             </div>
         </div>
         <div id="ab-glue-products" class="products-section section-padding bg-light">
-            <NuxtLink to="/" class="category-sidebar" style="background-image: url('/images/bg/c.jpg')"></NuxtLink>
+            <NuxtLink
+                :to="{ path: '/products', query: { category: 'AB Adhesives' } }"
+                class="category-sidebar"
+                style="background-image: url('/images/bg/c.jpg')"
+            ></NuxtLink>
             <div class="product-list-wrapper">
                 <ProductRow :products="abGlueProducts" />
             </div>
         </div>
         <div id="502-glue-products" class="products-section section-padding">
-            <NuxtLink to="/" class="category-sidebar" style="background-image: url('/images/bg/d.jpg')"></NuxtLink>
+            <NuxtLink
+                :to="{ path: '/products', query: { category: 'Super Glue' } }"
+                class="category-sidebar"
+                style="background-image: url('/images/bg/d.jpg')"
+            ></NuxtLink>
             <div class="product-list-wrapper">
                 <ProductRow :products="glue502Products" />
             </div>
         </div>
         <div id="tape-products" class="products-section section-padding bg-light">
-            <NuxtLink to="/" class="category-sidebar" style="background-image: url('/images/bg/b.jpg')"></NuxtLink>
+            <NuxtLink
+                :to="{ path: '/products', query: { category: 'PVC Wire Harness Insulation Tape' } }"
+                class="category-sidebar"
+                style="background-image: url('/images/bg/b.jpg')"
+            ></NuxtLink>
             <div class="product-list-wrapper">
                 <ProductRow :products="tapeProducts" />
             </div>
@@ -143,12 +163,20 @@ import { Box, Opportunity, Service } from '@element-plus/icons-vue';
 import { useProducts } from '@/composables/useProducts';
 
 const { t } = useI18n({ useScope: 'global' });
+
+const categories = [
+    'RTV Silicone Gasket Maker',
+    'AB Adhesives',
+    'Super Glue',
+    'PVC Wire Harness Insulation Tape',
+];
+
 // const { data: products } = await useAsyncData('products', () => $fetch('/_data/products.json'));
 const { products } = useProducts();
-const sealantProducts = computed(() => (products.value ?? []).filter((p) => p.category.name === 'RTV Silicone Gasket Maker'));
-const abGlueProducts = computed(() => (products.value ?? []).filter((p) => p.category.name === 'AB Adhesives'));
-const glue502Products = computed(() => (products.value ?? []).filter((p) => p.category.name === 'Super Glue'));
-const tapeProducts = computed(() => (products.value ?? []).filter((p) => p.category.name === 'PVC Wire Harness Insulation Tape'));
+const sealantProducts = computed(() => (products.value ?? []).filter((p) => p.category.name === categories[0]));
+const abGlueProducts = computed(() => (products.value ?? []).filter((p) => p.category.name === categories[1]));
+const glue502Products = computed(() => (products.value ?? []).filter((p) => p.category.name === categories[2]));
+const tapeProducts = computed(() => (products.value ?? []).filter((p) => p.category.name === categories[3]));
 </script>
 
 <style>
